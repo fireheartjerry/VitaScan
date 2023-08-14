@@ -60,7 +60,7 @@ class User:
             elif (val == "Carbohydrates"):
                 limit = self.getCarbsNeeded()
             elif (val == "Fibre"):
-                limit = 1000
+                limit = 1000 # this should be self.getFibreNeeded() but I forgot to remove this debug line
             elif (val == "Sugars"):
                 limit = self.getSugarNeeded()
             elif (val == "Sodium"):
