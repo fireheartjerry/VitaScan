@@ -12,18 +12,6 @@ def convert(s: str) -> str:
     elif (s == "protein"): return "Protein"
 
 def process(ocr_data: list[str]) -> dict[str, list[float, float]]:
-    if ("Jaleur" in ocr_data):
-        return {
-            "Calories": [520.0, "cal", -1.0],
-            "Saturated Fat": [12.0, "g", 61],
-            "Carbohydrates": [63.0, "g", -1.0],
-            "Fibre": [3.0, "g", 11],
-            "Sugars": [3.0, "g", 3],
-            "Sodium": [2500.0, "mg", 109.0],
-            "Cholesterol": [0.0, "mg", -1.0],
-            "Calcium": [30.0, "mg", 2.0],
-            "Protein": [11.0, "g", -1.0]
-        }
     data = [re.sub(r'[^a-zA-Z0-9%]', '', s) for s in ocr_data]
     data = [x.lower() for x in data if x.strip()]
     data = data[data.index("calories"):]
